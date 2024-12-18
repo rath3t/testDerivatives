@@ -1,0 +1,25 @@
+{
+	"dockerComposeFile": [
+		"../docker-compose.yml"
+	],
+	"workspaceFolder": "/workspaces/ikarus",
+	"service": "OpenIkarusContainer",
+	"shutdownAction": "stopCompose",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"charliermarsh.ruff"
+			],
+			"settings": {
+				"python.pythonPath": "/dune/dune-common/build-cmake/dune-env/bin/python",
+				"python.defaultInterpreterPath": "/dune/dune-common/build-cmake/dune-env/bin/python",
+				"[python]": {
+					"editor.defaultFormatter": "charliermarsh.ruff",
+					"editor.formatOnSave": true
+				}
+			}
+		}
+	},
+	"postCreateCommand": "pip install -r requirements.txt --verbose --upgrade --no-build-isolation && pip install --pre pyikarus --verbose --upgrade --no-build-isolation"
+}
